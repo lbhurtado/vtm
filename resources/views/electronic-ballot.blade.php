@@ -1,8 +1,6 @@
-Electronic Ballot #{!! $ballotId !!}
+Matching Electronic Ballot
 
-@foreach($positions as $position => $polls)
-{!! $position !!}
-@foreach($polls as $index => $poll)
-  {{ str_pad(str_limit(strtoupper($poll['candidate']), 10, ""), 10, " ", STR_PAD_RIGHT) }}
-@endforeach
+@foreach($positions as $position)
+
+{{ str_pad($position->name, 14, ' ', STR_PAD_RIGHT) }} - {!! optional($position->pivot->candidate)->code !!}
 @endforeach

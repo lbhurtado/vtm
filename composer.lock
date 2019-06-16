@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e275b9a2df7181b9bb1f479d41b1c357",
+    "content-hash": "c1e635946f7235ef946c2d974bd07e18",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1037,16 +1037,16 @@
         },
         {
             "name": "lbhurtado/ballot",
-            "version": "1.1.4",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lbhurtado/ballot.git",
-                "reference": "1df0f72fb3d091a6122452b50282b43442703698"
+                "reference": "2f1c6f4a52a02a31dd9d7006a4d38316701278b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lbhurtado/ballot/zipball/1df0f72fb3d091a6122452b50282b43442703698",
-                "reference": "1df0f72fb3d091a6122452b50282b43442703698",
+                "url": "https://api.github.com/repos/lbhurtado/ballot/zipball/2f1c6f4a52a02a31dd9d7006a4d38316701278b1",
+                "reference": "2f1c6f4a52a02a31dd9d7006a4d38316701278b1",
                 "shasum": ""
             },
             "require": {
@@ -1095,7 +1095,7 @@
                 "ballot",
                 "lbhurtado"
             ],
-            "time": "2019-06-15T06:22:44+00:00"
+            "time": "2019-06-16T03:43:27+00:00"
         },
         {
             "name": "lbhurtado/common",
@@ -1447,6 +1447,46 @@
                 "qr code reader"
             ],
             "time": "2017-06-02T12:56:55+00:00"
+        },
+        {
+            "name": "martinlindhe/php-mb-helpers",
+            "version": "0.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/martinlindhe/php-mb-helpers.git",
+                "reference": "3550df9e6976f753d2879543e4aaf96eaa9657a2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/martinlindhe/php-mb-helpers/zipball/3550df9e6976f753d2879543e4aaf96eaa9657a2",
+                "reference": "3550df9e6976f753d2879543e4aaf96eaa9657a2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.6"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/mb_helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Martin Lindhe",
+                    "email": "martin@ubique.se"
+                }
+            ],
+            "description": "Provides mb_ucwords(), mb_ucfirst(), mb_strrev(), mb_str_pad(), mb_count_chars(), mb_str_split()",
+            "homepage": "https://github.com/martinlindhe/php-mb-helpers",
+            "time": "2015-11-01T14:06:04+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -5653,7 +5693,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "lbhurtado/ballot": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

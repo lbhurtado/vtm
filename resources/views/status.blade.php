@@ -1,4 +1,5 @@
-QR Code: {!! $qrCode !!}
+Ballot Id# {{ $ballot->code }}
 
-Precinct: {!! $precinct !!}
-LGU: {!! $lgu !!}
+14 Nov 1961
+Precinct {!! $precinct !!}
+{!! $lgu !!}

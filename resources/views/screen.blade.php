@@ -18,12 +18,12 @@
     <body>
 		<div style="height:100%">
 			<div class="topdiv">
-				<iframe src="/status" width="100%" height="100%"></iframe>
+				<iframe src="{{route('status', $ballot)}}" width="100%" height="100%"></iframe>
 			</div>
 			<div class="bottomdiv">
-				<iframe src="/tally" width="20%" height="100%"></iframe>
-				<iframe src="/electronic-ballot" width="20%" height="100%"></iframe>
-				<iframe src="/physical-ballot" width="58%" height="100%"></iframe>
+				<iframe src="{{route('electronic-ballot', $ballot)}}" width="25%" height="100%"></iframe>
+				<iframe src="{{route('physical-ballot', $ballot)}}" width="48%" height="100%"></iframe>
+				<iframe src="/tally" width="25%" height="100%"></iframe>
 			</div>
 		</div>
 
