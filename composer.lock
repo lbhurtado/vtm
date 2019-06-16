@@ -1041,12 +1041,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lbhurtado/ballot.git",
-                "reference": "ccbf8278bdc313227f37e7133b6fe883d9de6467"
+                "reference": "0d041152f7526ceb90ca409e5c812193ba2ec34c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lbhurtado/ballot/zipball/ccbf8278bdc313227f37e7133b6fe883d9de6467",
-                "reference": "ccbf8278bdc313227f37e7133b6fe883d9de6467",
+                "url": "https://api.github.com/repos/lbhurtado/ballot/zipball/0d041152f7526ceb90ca409e5c812193ba2ec34c",
+                "reference": "0d041152f7526ceb90ca409e5c812193ba2ec34c",
                 "shasum": ""
             },
             "require": {
@@ -1095,7 +1095,7 @@
                 "ballot",
                 "lbhurtado"
             ],
-            "time": "2019-06-16T16:21:01+00:00"
+            "time": "2019-06-16T23:05:05+00:00"
         },
         {
             "name": "lbhurtado/common",
