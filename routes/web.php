@@ -20,12 +20,13 @@ Route::get('/', function () {
 
 Route::get('/tally', function() {
 	$positions = Position::all()->sortBy('id');
+	$index = 1;
 
     return response()
     	->view('tally', compact('positions'), 200)
     	->header('Content-Type', 'text/plain')
     	;
-});
+})->name('status');
 
 Route::get('/electronic-ballot/{ballot}', function(Ballot $ballot) {
 	$positions = $ballot->positions;
