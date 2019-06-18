@@ -64,3 +64,7 @@ Route::get('/screen/{ballot_code}', function ($ballot_code) {
     return view('screen', compact('ballot'));
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
