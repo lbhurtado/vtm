@@ -64,6 +64,9 @@ Route::get('/screen/{ballot_code}', function ($ballot_code) {
     return view('screen', compact('ballot'));
 });
 
+Route::get('/ballot', 'BallotController@index')->name('ballot');
+
+Route::post('/ballot/candidate', 'BallotController@store')->name('ballot-candidate');
 
 Auth::routes();
 
