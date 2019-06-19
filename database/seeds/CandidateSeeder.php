@@ -18,10 +18,10 @@ class CandidateSeeder extends Seeder
                 'candidates' => [
                     ['code' => 'MACAPAGAL', 'name' => 'Diosdado Macapagal'],
                     ['code' => 'GARCIA',    'name' => 'Carlos P. Garcia'],
-                    // ['code' => 'ABCEDE',    'name' => 'Alfredo Abcede'],
-                    // ['code' => 'VILLANUEVA','name' => 'German P. Villanueva'],
-                    // ['code' => 'LLANZA',    'name' => 'Gregorio L. Llanza'],
-                    // ['code' => 'FLORO',    'name' => 'Praxedes Floro'],
+                    ['code' => 'ABCEDE',    'name' => 'Alfredo Abcede'],
+                    ['code' => 'VILLANUEVA','name' => 'German P. Villanueva'],
+                    ['code' => 'LLANZA',    'name' => 'Gregorio L. Llanza'],
+                    ['code' => 'FLORO',    'name' => 'Praxedes Floro'],
                 ],
             ],
             [
@@ -29,8 +29,8 @@ class CandidateSeeder extends Seeder
                 'candidates' => [
                     ['code' => 'PELAEZ',    'name' => 'Emmanuel Pelaez'],
                     ['code' => 'OSMEÑA',    'name' => 'Sergio Osmeña Jr.'],
-                    // ['code' => 'PUYAT',     'name' => 'Gil Puyat'],
-                    // ['code' => 'JUTA',      'name' => 'Chencay Reyes Juta']
+                    ['code' => 'PUYAT',     'name' => 'Gil Puyat'],
+                    ['code' => 'JUTA',      'name' => 'Chencay Reyes Juta']
                 ],
             ],
             [
@@ -57,7 +57,7 @@ class CandidateSeeder extends Seeder
                     ['code' => 'OFEMARIA',  'name' => 'Francisco Ofemaria'],
                     ['code' => 'HIDALGO',   'name' => 'Ernesto Hidalgo'],
                     ['code' => 'JAVINEZ',   'name' => 'Leon Javinez Sr.'],
-                    ['code' => 'BRIONES', 'name' => 'ose Briones'],
+                    ['code' => 'BRIONES', 'name' => 'Jose Briones'],
                 ],
 
             ],

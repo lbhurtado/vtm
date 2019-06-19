@@ -6,58 +6,40 @@
         <div class="col-md-8">
             <div class="card">
                 @foreach($positions as $position)
-                    <div class="card-header">{{ __($position->name) }}</div>
-                    @foreach($position->candidates as $candidate)
+                    <div class="card-header">{{ __($position->name) }} (choose {{ $position->seats }})</div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('ballot-candidate') }}">
                             @csrf
-                            <input type="hidden" name="ballot_code" value="ABC-0002">
-                            <input type="hidden" name="seat_id" value=1>
-                            <div class="form-group row mb-0">
-                                <div class="col-md-8">
-                                    <button type="submit" class="btn btn-primary" name="candidate_code" value="{{ __($candidate->code) }}">
-                                        {{ __($candidate->code) }}
-                                    </button>
-                                </div>
+                            <input type="hidden" name="ballot_code" value="{{ __($ballot->code) }}">
+                            <div class="btn-group-vertical btn-block">
+                                @php 
+                                    $count = $position->candidates()->whereHas('votes', function ($q) use ($ballot) {
+                                        $q->where('votes', 1)->where('ballot_id', $ballot->id);  
+                                    })->count(); 
+                                    $seat_id = $count%$position->seats + 1;
+                                @endphp
+                                {{ $count }} / {{ $position->seats }}
+                                @foreach($position->candidates as $candidate)
+                                    @if($candidate->votes()->whereHas('ballot', function ($q) use ($ballot) {$q->where('id', $ballot->id);})->count() === 1 )
+                                        @php 
+                                            $style='btn-primary';
+                                            $seat_id = $candidate->votes()->first()->seat_id;
+                                        @endphp
+                                    @else
+                                        @php 
+                                            $style='btn-secondary'; 
+
+                                        @endphp
+                                    @endif
+                                <input type="hidden" name="seat_id" value="{{ $seat_id }}">
+                                <button type="submit" class="btn {{ $style }} btn-block" name="candidate_code" value="{{ __($candidate->code) }}">
+                                    {{ __($candidate->code) }}
+                                </button>
+                                @endforeach
                             </div>
                         </form>
                     </div>
-                    @endforeach
                 @endforeach
-
-                <!-- <div class="card-header">{{ __('President') }}</div>
-                <div class="card-body">
-                    <form method="POST" action="{{ route('ballot-candidate') }}">
-                        @csrf
-                        <input type="hidden" name="ballot_code" value="ABC-0002">
-                        <input type="hidden" name="seat_id" value=1>
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8">
-                                <button type="submit" class="btn btn-primary" name="candidate_code" value="MACAPAGAL">
-                                    {{ __('Macapagal') }}
-                                </button>
-                                <button type="submit"class="btn btn-primary" name="candidate_code" value="GARCIA">  
-                                    {{ __('Garcia') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="card-header">{{ __('Senator') }}</div>                
-                <div class="card-body">
-                    <form method="POST" action="{{ route('ballot-candidate') }}">
-                        @csrf
-                        <input type="hidden" name="ballot_code" value="ABC-0002">       
-                        <input type="hidden" name="seat_id" value=5>
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8">
-                                <button type="submit" class="btn btn-primary" name="candidate_code" value="OSIAS">
-                                    {{ __('Osias') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div> -->
             </div>
         </div>
     </div>
