@@ -1,0 +1,8 @@
+#! /bin/bash
+echo Seeding....
+cd ~/Documents/Dev/Code/vtm
+php artisan migrate:fresh
+php artisan db:seed --class=PositionSeeder
+php artisan db:seed --class=CandidateSeeder
+php artisan db:seed --class=UserSeeder
+echo Seeded.

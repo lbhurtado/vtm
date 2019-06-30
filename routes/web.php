@@ -64,10 +64,21 @@ Route::get('/screen/{ballot_code}', function ($ballot_code) {
     return view('screen', compact('ballot'));
 });
 
-Route::get('/ballot', 'BallotController@index')->name('ballot');
+Route::get('/ballot', 'BallotController@index')->name('ballot')->middleware('auth');;
 
-Route::post('/ballot/candidate', 'BallotController@store')->name('ballot-candidate');
+Route::post('/ballot/candidate', 'BallotController@store')->name('ballot-candidate')->middleware('auth');;
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/match/{ballot}', function (Ballot $ballot) {
+
+	return view('match', compact('ballot'));
+});
+
+Route::get('/dashboard/{ballot}', function (Ballot $ballot) {
+	$positions = Position::all()->sortBy('id');
+
+	return view('dashboard', compact('ballot', 'positions'));
+});

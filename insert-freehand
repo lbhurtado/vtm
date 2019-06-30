@@ -1,0 +1,6 @@
+#! /bin/bash
+echo Inserting Free Hand Ballot....
+cd ~/Documents/Dev/Code/vtm
+cp ~/Downloads/demo/freehand-filled.jpg storage/app/public/ballot.jpg
+php artisan ballot:process
+echo Free Hand Ballot inserted.

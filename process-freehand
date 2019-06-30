@@ -1,0 +1,5 @@
+#! /bin/bash
+echo Processing Free Hand Ballot....
+cd ~/Documents/Dev/Code/vtm
+php artisan db:seed --class=FreehandSeeder
+echo Free Hand Ballot processed.

@@ -1,0 +1,6 @@
+#! /bin/bash
+echo Inserting Scholastic Ballot....
+cd ~/Documents/Dev/Code/vtm
+cp ~/Downloads/demo/scholastic-filled.jpg storage/app/public/ballot.jpg
+php artisan ballot:process
+echo Scholastic Ballot inserted.

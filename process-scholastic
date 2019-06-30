@@ -1,0 +1,5 @@
+#! /bin/bash
+echo Processing Scholastic Ballot....
+cd ~/Documents/Dev/Code/vtm
+php artisan db:seed --class=ScholasticSeeder
+echo Scholastic Ballot processed.

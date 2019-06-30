@@ -5,6 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+                <div class="card-header">Ballot Id# {{ __($ballot->code) }} ({{ __($ballot->id) }} / {{ __($ballot->count()) }})</div>
                 @foreach($positions as $position)
                     <div class="card-header">{{ __($position->name) }} (choose {{ $position->seats }})</div>
                     <div class="card-body">
@@ -23,12 +24,11 @@
                                     @if($candidate->votes()->whereHas('ballot', function ($q) use ($ballot) {$q->where('id', $ballot->id);})->count() === 1 )
                                         @php 
                                             $style='btn-primary';
-                                            $seat_id = $candidate->votes()->first()->seat_id;
+                                            
                                         @endphp
                                     @else
                                         @php 
                                             $style='btn-secondary'; 
-
                                         @endphp
                                     @endif
                                 <input type="hidden" name="seat_id" value="{{ $seat_id }}">
